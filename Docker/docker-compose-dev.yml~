@@ -1,0 +1,20 @@
+version: '2'
+services:
+  supervisor:
+    build:
+      context: ..
+      dockerfile: Dockerfile-supervisor
+    volumes:
+      - ..:/usr/src/app
+
+  producer:
+    build:
+      context: ..
+      dockerfile: Dockerfile-producer
+    volumes:
+      - ..:/usr/src/app
+
+  rabbitmq:
+    image: rabbitmq:3.6.5-management
+    ports:
+      - "127.0.0.1:8000:15672" # for management
