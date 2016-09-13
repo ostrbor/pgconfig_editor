@@ -3,9 +3,6 @@ services:
   supervisor:
     build:
       context: ..
-      dockerfile: Docker/Dockerfile-supervisor
+      dockerfile: Docker/Dockerfile
     volumes:
       - ..:/usr/src/app
-
-  rabbitmq:
-    image: rabbitmq:3.6.5-management
