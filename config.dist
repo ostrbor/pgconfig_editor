@@ -1,0 +1,17 @@
+# Required!
+WEB_SERVER = ''
+
+PG_RESTART_CMD = '/etc/init.d/postgresql restart'
+
+PG_HBA_PATH = '/etc/postgresql/9.1/main/'
+
+PG_HBA_FILE = 'pg_hba.conf'
+
+IPIFY_URL = 'https://api.ipify.org'
+
+# Required!
+PG_HBA_LINE = 1
+
+IP_CHANGER_COMMAND = r"sed -r -i.bak '{LINE}s/([0-9]{{1,3}}\.){{3}}[0-9]{{1,3}}/{NEW_IP}/' {FILE}"
+
+IP_GETTER_COMMAND = r"sed -n '{LINE}p' {FILE} | grep -o '[0-9]\{{1,3\}}\.[0-9]\{{1,3\}}\.[0-9]\{{1,3\}}\.[0-9]\{{1,3\}}'"
